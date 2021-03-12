@@ -1,0 +1,20 @@
+[package]
+name = "parallel"
+version = "0.1.6"
+authors = ["Kei Tsuji <ktsujister@gmail.com>"]
+edition = "2018"
+description = "Tool for running specified command in parallel against input"
+
+[dependencies]
+structopt = "0.3"
+thiserror = "1.0"
+rayon = "1.3"
+log = "0.4"
+env_logger = { version = "0.7", default-features = false, features = ["humantime"] }
+itertools = "0.9"
+num_cpus = "1.12"
+libc = "0.2"
+
+[profile.release]
+lto = true
+panic = 'abort'
